@@ -8,8 +8,6 @@ def folder_names_locator(bucket, raw_data_path):
     platform_folder_response = s3.list_objects_v2(Bucket = bucket, Prefix = raw_data_path, Delimiter = "/") #if we do not add Delimeter / then we will end up getting al the objects inside s3 bucket
 
     platform_folder_list = [folder['Prefix'] for folder in platform_folder_response['CommonPrefixes']] #common prefixes in JSON contains the 
-            
-    #find templates in second iterations.
     
     templates_paths = []
     
